@@ -1,0 +1,379 @@
+:root {
+	--linear-gradient: linear-gradient(
+		90deg,
+		hsl(249, 99%, 64%),
+		hsl(278, 94%, 30%)
+	);
+	--input-error: hsl(0, 100%, 66%);
+	--white: hsl(0, 0%, 100%);
+	--light-grayish-violet: hsl(270, 3%, 87%);
+	--dark-grayish-violet: hsl(279, 6%, 55%);
+	--very-dark-violet: hsl(278, 68%, 11%);
+	--very-dark-violet-hover: hsl(278, 67%, 20%);
+	--circle-w: 27px;
+	--circle-border: 13px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.8rem;
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+// ---------------- FOOTER ----------------//
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+// ---------------------------------------
+
+// ---------------- BUTTON ----------------//
+
+.flex {
+	display: flex;
+	gap: 0.5em;
+}
+
+// ---------------- CARDS ----------------//
+.main {
+	max-width: 375px;
+	margin: 0 auto 15em;
+}
+
+.card-images {
+	background-image: url(../images/bg-main-mobile.png);
+	height: 240px;
+	color: var(--white);
+	position: relative;
+}
+
+.card {
+	width: 76%;
+	height: auto;
+
+	&--back {
+		position: relative;
+		top: 13%;
+		right: -20%;
+	}
+
+	&--front {
+		position: absolute;
+		left: 4%;
+		bottom: -14.5%;
+		z-index: 1;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		&--front {
+			box-shadow: 0px 23px 80px -39px rgba(66, 68, 90, 1);
+		}
+	}
+
+	&__cvc,
+	&__front-card-content {
+		position: absolute;
+	}
+
+	&__cvc {
+		right: 12%;
+		top: 45%;
+		font-size: 0.9rem;
+		letter-spacing: 1px;
+		font-weight: 300;
+	}
+
+	&__front-card-content {
+		top: 0;
+		padding: 1em;
+		width: 100%;
+	}
+
+	&__shapes {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+
+	&__circle,
+	&__circle-border {
+		border-radius: 50%;
+	}
+
+	&__circle {
+		width: var(--circle-w);
+		height: var(--circle-w);
+		background-color: var(--white);
+	}
+
+	&__circle-border {
+		width: var(--circle-border);
+		height: var(--circle-border);
+		border: 1px solid white;
+	}
+
+	&__acc-number {
+		margin: 2.3em 0 0.9em;
+		letter-spacing: 2px;
+	}
+
+	&__bottom-box {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.95rem;
+		font-weight: 300;
+		letter-spacing: 1px;
+	}
+
+	&__name {
+		text-transform: uppercase;
+	}
+}
+
+// ---------------- FORM SECTION ----------------//
+.form,
+.complete {
+	padding: 0 1.2em;
+}
+
+.form {
+	margin: 4em 0;
+
+	&__input-date-box,
+	&__input,
+	&__input-box {
+		width: 100%;
+	}
+
+	&__input-box {
+		margin-bottom: 0.8em;
+	}
+
+	&__input,
+	&__input:focus {
+		border-radius: 8px;
+	}
+
+	&__label,
+	&__input {
+		color: var(--very-dark-violet);
+		font-weight: 500;
+	}
+
+	&__label {
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	&__input {
+		display: block;
+		margin-top: 0.4em;
+		padding: 0.7em;
+		border: 1px solid var(--light-grayish-violet);
+		font-size: 1.65rem;
+		transition: all 0.2s;
+		outline: none;
+	}
+
+	&__input::placeholder {
+		position: relative;
+		color: var(--light-grayish-violet);
+		font-size: 1.65rem;
+		font-weight: 600;
+	}
+
+	&__input:focus {
+		border: double 1px transparent;
+		background-image: linear-gradient(white, white), var(--linear-gradient);
+		background-origin: border-box;
+		background-clip: padding-box, border-box;
+	}
+
+	&__inputs-bottom {
+		gap: 0.6em;
+	}
+
+	&__error {
+		color: var(--input-error);
+		font-size: 1.1rem;
+		margin-top: 0.4em;
+	}
+}
+
+.form__content .form__error--years {
+	position: relative;
+}
+
+// ---------------- COMPLETE STATE ----------------//
+.complete {
+	display: none;
+	margin-top: 4.5em;
+
+	&__container {
+		text-align: center;
+		width: 100%;
+	}
+
+	&__thank-you {
+		margin: 1.5em 0 0.5em;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 2.6rem;
+	}
+
+	&__text {
+		color: var(--dark-grayish-violet);
+	}
+}
+// ---------------- ERROR ----------------//
+.error .form__input {
+	border: 1px solid var(--input-error);
+}
+
+// ---------------- BUTTON ----------------//
+.btn-confirm,
+.btn-continue {
+	display: block;
+	width: 100%;
+	margin-top: 0.8em;
+	padding: 1em 0;
+	background-color: var(--very-dark-violet);
+	color: var(--white);
+	border: none;
+	border-radius: 8px;
+	font-size: 1.7rem;
+	letter-spacing: 1px;
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+
+.btn-continue {
+	margin-top: 2.5em;
+}
+
+.btn-confirm:hover,
+.btn-continue:hover {
+	background-color: var(--very-dark-violet-hover);
+}
+
+@media (min-width: 1440px) {
+	.main {
+		max-width: 100vw;
+		display: grid;
+		grid-template-columns: 2.2fr 5fr;
+		margin: 0;
+	}
+
+	.card-images {
+		min-height: 100vh;
+		background-image: url(../images/bg-main-desktop.png);
+		background-size: cover;
+	}
+
+	.card {
+		width: 94%;
+		max-width: 409px;
+
+		&--back {
+			top: 49%;
+			right: -53%;
+		}
+
+		&--front {
+			position: absolute;
+			left: 34%;
+			bottom: 55%;
+			z-index: 1;
+		}
+
+		&__img {
+			border-radius: 10px;
+			box-shadow: 0px 10px 76px -1px hsla(235, 15%, 31%, 0.705);
+		}
+
+		&__cvc {
+			right: 13%;
+			top: 45.5%;
+			font-size: 1.3rem;
+		}
+
+		&__front-card-content {
+			height: 100%;
+			padding: 1.5em;
+		}
+
+		&__shapes {
+			gap: 0.7em;
+		}
+
+		&__circle {
+			width: calc(var(--circle-w) + (var(--circle-w) * 0.5));
+			height: calc(var(--circle-w) + (var(--circle-w) * 0.5));
+		}
+
+		&__circle-border {
+			width: calc(var(--circle-border) + (var(--circle-border) * 0.4));
+			height: calc(var(--circle-border) + (var(--circle-border) * 0.4));
+		}
+
+		&__acc-number {
+			font-size: 2.5rem;
+			letter-spacing: 4px;
+			margin-bottom: 1em;
+		}
+
+		&__bottom-box {
+			font-size: 1.2rem;
+			margin-top: 0;
+		}
+	}
+
+	.form,
+	.complete {
+		align-self: center;
+		grid-template-columns: 4fr 420px 3fr;
+		margin: 0;
+		padding: 0;
+	}
+
+	.form {
+		display: grid;
+	}
+
+	.form__container,
+	.complete__container {
+		grid-column: 2/3;
+	}
+}
+
+@media (min-width: 1600px) {
+	.main {
+		grid-template-columns: 1.8fr 5fr;
+	}
+
+	.card {
+		min-width: 409px;
+		max-width: 409px;
+	}
+
+	.form,
+	.complete {
+		grid-template-columns: 2.2fr 420px 3fr;
+	}
+}

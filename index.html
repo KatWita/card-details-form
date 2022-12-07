@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main">
+    <div class="card-images">
+      <div class="card card--front">
+        <img src="./images/bg-card-front.png" alt="front card" class="card__img card__img--front">
+        <div class="card__front-card-content">
+          <div class="card__shapes">
+            <div class="card__circle"></div>
+            <div class="card__circle-border"></div>
+          </div>
+          <p class="card__acc-number card-input" data-id="card">0000 0000 0000 0000</p>
+          <div class="card__bottom-box">
+            <p class="card__name card-input" data-id="name">Jane Appleseed</p>
+            <p class="card__date"><span class="card__month card-input" data-id="month">00</span>/<span
+                class="card__year card-input" data-id="year">00</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card--back">
+        <img src="./images/bg-card-back.png" alt="back card" class="card__img">
+        <span class="card__cvc card-input" data-id="cvc">000</span>
+      </div>
+    </div>
+
+    <section class="form">
+      <form class="form__container">
+        <div class="form__input-box">
+          <label for="name" class="form__label">Cardholder Name</label>
+          <input type="text" class="form__input" id="name" maxlength="28" data-default="Jane Appleseed"
+            placeholder="e.g. Jane Appleseed" autocomplete="off">
+          <p class="form__error"></p>
+        </div>
+        <div class="form__input-box">
+          <label for="card" class="form__label">Card Number</label>
+          <input type="text" class="form__input" id="card" data-default="0000 0000 0000 0000" maxlength="19"
+            placeholder="e.g. 1234 5678 9123 0000" autocomplete="off">
+          <p class="form__error"></p>
+        </div>
+
+        <div class="form__inputs-bottom flex ">
+          <div>
+            <label for="month" class="form__label">Exp. Date (MM/YY)</label>
+            <div class="form__content flex">
+              <div class="form__input-box">
+                <input type="text" class="form__input" id="month" maxlength="2" data-default="00" placeholder="MM"
+                  autocomplete="off">
+                <p class="form__error form__error--month"></p>
+              </div>
+              <div class="form__input-box">
+                <input type="text" class="form__input" id="year" maxlength="2" data-default="00" placeholder="YY"
+                  autocomplete="off">
+                <p class="form__error form__error--years"></p>
+              </div>
+            </div>
+          </div>
+          <div class="form__input-box">
+            <label for="cvc" class="form__label">CVC</label>
+            <input type="text" class="form__input" id="cvc" maxlength="3" data-default="000" placeholder="e.g. 123"
+              autocomplete="off">
+            <p class="form__error"></p>
+          </div>
+        </div>
+        <button class="btn-confirm">Confirm</button>
+      </form>
+    </section>
+    <!-- Completed state start -->
+    <div class="complete">
+      <div class="complete__container">
+        <img src="./images/icon-complete.svg" alt="checkmark image" class="complete__checkmark">
+        <p class="complete__thank-you">Thank you!</p>
+        <p class="complete__text">We've added your card details</p>
+        <button class="btn-continue">Continue</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/KatWita">KatWita</a>.
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

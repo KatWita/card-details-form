@@ -1,0 +1,333 @@
+:root {
+  --linear-gradient: linear-gradient(
+  	90deg,
+  	hsl(249, 99%, 64%),
+  	hsl(278, 94%, 30%)
+  );
+  --input-error: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+  --very-dark-violet-hover: hsl(278, 67%, 20%);
+  --circle-w: 27px;
+  --circle-border: 13px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+.flex {
+  display: flex;
+  gap: 0.5em;
+}
+
+.main {
+  max-width: 375px;
+  margin: 0 auto 15em;
+}
+
+.card-images {
+  background-image: url(../images/bg-main-mobile.png);
+  height: 240px;
+  color: var(--white);
+  position: relative;
+}
+
+.card {
+  width: 76%;
+  height: auto;
+}
+.card--back {
+  position: relative;
+  top: 13%;
+  right: -20%;
+}
+.card--front {
+  position: absolute;
+  left: 4%;
+  bottom: -14.5%;
+  z-index: 1;
+}
+.card__img {
+  display: block;
+  width: 100%;
+}
+.card__img--front {
+  box-shadow: 0px 23px 80px -39px rgb(66, 68, 90);
+}
+.card__cvc, .card__front-card-content {
+  position: absolute;
+}
+.card__cvc {
+  right: 12%;
+  top: 45%;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+.card__front-card-content {
+  top: 0;
+  padding: 1em;
+  width: 100%;
+}
+.card__shapes {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.card__circle, .card__circle-border {
+  border-radius: 50%;
+}
+.card__circle {
+  width: var(--circle-w);
+  height: var(--circle-w);
+  background-color: var(--white);
+}
+.card__circle-border {
+  width: var(--circle-border);
+  height: var(--circle-border);
+  border: 1px solid white;
+}
+.card__acc-number {
+  margin: 2.3em 0 0.9em;
+  letter-spacing: 2px;
+}
+.card__bottom-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.card__name {
+  text-transform: uppercase;
+}
+
+.form,
+.complete {
+  padding: 0 1.2em;
+}
+
+.form {
+  margin: 4em 0;
+}
+.form__input-date-box, .form__input, .form__input-box {
+  width: 100%;
+}
+.form__input-box {
+  margin-bottom: 0.8em;
+}
+.form__input, .form__input:focus {
+  border-radius: 8px;
+}
+.form__label, .form__input {
+  color: var(--very-dark-violet);
+  font-weight: 500;
+}
+.form__label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.form__input {
+  display: block;
+  margin-top: 0.4em;
+  padding: 0.7em;
+  border: 1px solid var(--light-grayish-violet);
+  font-size: 1.65rem;
+  transition: all 0.2s;
+  outline: none;
+}
+.form__input::-moz-placeholder {
+  position: relative;
+  color: var(--light-grayish-violet);
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+.form__input:-ms-input-placeholder {
+  position: relative;
+  color: var(--light-grayish-violet);
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+.form__input::placeholder {
+  position: relative;
+  color: var(--light-grayish-violet);
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+.form__input:focus {
+  border: double 1px transparent;
+  background-image: linear-gradient(white, white), var(--linear-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.form__inputs-bottom {
+  gap: 0.6em;
+}
+.form__error {
+  color: var(--input-error);
+  font-size: 1.1rem;
+  margin-top: 0.4em;
+}
+
+.form__content .form__error--years {
+  position: relative;
+}
+
+.complete {
+  display: none;
+  margin-top: 4.5em;
+}
+.complete__container {
+  text-align: center;
+  width: 100%;
+}
+.complete__thank-you {
+  margin: 1.5em 0 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.6rem;
+}
+.complete__text {
+  color: var(--dark-grayish-violet);
+}
+
+.error .form__input {
+  border: 1px solid var(--input-error);
+}
+
+.btn-confirm,
+.btn-continue {
+  display: block;
+  width: 100%;
+  margin-top: 0.8em;
+  padding: 1em 0;
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.btn-continue {
+  margin-top: 2.5em;
+}
+
+.btn-confirm:hover,
+.btn-continue:hover {
+  background-color: var(--very-dark-violet-hover);
+}
+
+@media (min-width: 1440px) {
+  .main {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: 2.2fr 5fr;
+    margin: 0;
+  }
+  .card-images {
+    min-height: 100vh;
+    background-image: url(../images/bg-main-desktop.png);
+    background-size: cover;
+  }
+  .card {
+    width: 94%;
+    max-width: 409px;
+  }
+  .card--back {
+    top: 49%;
+    right: -53%;
+  }
+  .card--front {
+    position: absolute;
+    left: 34%;
+    bottom: 55%;
+    z-index: 1;
+  }
+  .card__img {
+    border-radius: 10px;
+    box-shadow: 0px 10px 76px -1px hsla(235deg, 15%, 31%, 0.705);
+  }
+  .card__cvc {
+    right: 13%;
+    top: 45.5%;
+    font-size: 1.3rem;
+  }
+  .card__front-card-content {
+    height: 100%;
+    padding: 1.5em;
+  }
+  .card__shapes {
+    gap: 0.7em;
+  }
+  .card__circle {
+    width: calc(var(--circle-w) + var(--circle-w) * 0.5);
+    height: calc(var(--circle-w) + var(--circle-w) * 0.5);
+  }
+  .card__circle-border {
+    width: calc(var(--circle-border) + var(--circle-border) * 0.4);
+    height: calc(var(--circle-border) + var(--circle-border) * 0.4);
+  }
+  .card__acc-number {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 1em;
+  }
+  .card__bottom-box {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+  .form,
+.complete {
+    align-self: center;
+    grid-template-columns: 4fr 420px 3fr;
+    margin: 0;
+    padding: 0;
+  }
+  .form {
+    display: grid;
+  }
+  .form__container,
+.complete__container {
+    grid-column: 2/3;
+  }
+}
+@media (min-width: 1600px) {
+  .main {
+    grid-template-columns: 1.8fr 5fr;
+  }
+  .card {
+    min-width: 409px;
+    max-width: 409px;
+  }
+  .form,
+.complete {
+    grid-template-columns: 2.2fr 420px 3fr;
+  }
+}/*# sourceMappingURL=style.css.map */
